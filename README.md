@@ -12,10 +12,16 @@ Production team members' required materials tracking program I prepared by using
 - T_shirt_type_3
 - Pants_type_1
 - Pants_type_2
-- shoe covers
+- Shoe_covers
 - Oil
-- Shell liquid
+- Shell_liquid
 - Lubrication chemical
-- ear plugs
-- Cleaning chemical
-- 
+- Ear_plugs
+- Cleaning_chemical
+- Cleaning_stick
+- Wiper
+- Plastic_cover
+- Safety_shoes
+- Winter_jacket
+- Office_materials
+- Lab_apron
