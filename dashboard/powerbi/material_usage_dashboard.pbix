@@ -1,0 +1,19 @@
+date → Date
+
+shift → Whole number
+
+department → Text
+
+role → Text
+
+material_name → Text
+
+total_quantity → Decimal
+
+users → Whole number
+
+total_output → Decimal
+
+qty_per_user → Decimal
+
+qty_per_1000_output → Decimal
