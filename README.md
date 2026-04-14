@@ -1,17 +1,71 @@
-# Operation Team Material Tracking
+# Operation Team Material Tracking 📦👷‍♀️
 
-Production team material usage tracking and optimization for a 3‑shift, 6‑day manufacturing shopfloor.
+Data-driven tracking of PPE and shopfloor material usage for a 3‑shift manufacturing operation, built with **Python + Power BI**.
 
-## Project overview
+---
 
-This project tracks and analyzes the consumption of personal protective equipment (PPE) and related materials for a production team under strong management pressure to reduce usage without compromising safety or quality.
+## 1. Project snapshot
 
-- **Total headcount:** 120 operators + 50 support staff (technicians, quality, etc.)
-- **Shifts:** 3 shifts
-- **Schedule:** 6 days per week
-- **Goal:** Reduce material usage per person and per output unit, identify waste, and support data‑driven decisions.
+**Goal:** Reduce over‑consumption of PPE and indirect materials (gloves, chemicals, clothing, etc.) while keeping safety and quality intact.
 
-### Tracked materials
+**Context:**
+
+- 120 operators + 50 support staff (technicians, quality, lab)
+- 3 shifts, 6‑day schedule (Sunday off)
+- Strong management pressure to **decrease material usage**
+- Materials include PPE, chemicals, clothing, and office/lab items
+
+**What I built:**
+
+- A **synthetic but realistic dataset** simulating 90 days of material usage
+- **Python pipeline** for data generation, cleaning, and KPI aggregation
+- A **Power BI dashboard** to monitor usage by shift, department, role, and material
+- Portfolio‑ready documentation focused on **business impact**
+
+---
+
+## 2. Business problem & impact
+
+### Problem
+
+Material usage on the shopfloor was perceived as “too high”, but:
+
+- No consolidated view across **shifts / departments / roles**
+- No baseline for **usage per person** or **per production output**
+- No easy way for management to see **where waste actually occurs**
+
+### Impact (what this solution enables)
+
+With this project, a manufacturing team could:
+
+- Track **usage per 1000 units produced** by material and shift  
+- Identify **outlier departments** or roles with unusually high consumption  
+- Run **before/after comparisons** when new rules or training are introduced  
+- Turn “we think usage is high” into **measurable, visual evidence**
+
+---
+
+## 3. Data design
+
+Because I cannot share real factory data, I created a **synthetic dataset** that mimics a real environment.
+
+### 3.1. Key entities
+
+Each row represents **material usage by one employee in one shift on one day**.
+
+**Columns:**
+
+- `date` – calendar date (90‑day range)
+- `shift` – 1, 2, or 3
+- `employee_id` – anonymized ID (E001–E170)
+- `role` – `operator`, `technician`, `quality`
+- `department` – `LINE_A`, `LINE_B`, `LINE_C`, `MAINTENANCE`, `LAB`
+- `material_name` – one of 20 tracked materials
+- `quantity_used` – numeric quantity
+- `unit` – `pair`, `piece`, or `liter`
+- `production_output` – units produced in that shift (for operators only)
+
+### 3.2. Tracked materials
 
 - Gloves_type_1  
 - Gloves_type_2  
@@ -34,48 +88,44 @@ This project tracks and analyzes the consumption of personal protective equipmen
 - Office_materials  
 - Lab_apron  
 
-## Data model
+---
 
-Each record represents material usage for a person (or group) in a given time period.
+## 4. Tech stack & skills demonstrated
 
-Example fields:
+- **Python**
+  - Synthetic data generation
+  - Data cleaning & preprocessing
+  - KPI calculation with `pandas`
+- **Power BI**
+  - Data modeling from CSV
+  - DAX measures (usage metrics, ratios)
+  - Interactive dashboards with slicers and drill‑downs
+- **Data skills**
+  - Designing a data model from a business problem
+  - Translating shopfloor reality into structured data
+  - Building metrics that management can act on
 
-- `date`
-- `shift` (1, 2, 3)
-- `employee_id`
-- `role` (operator, technician, quality, shift_leaders, planners, etc.)
-- `department` / `line`
-- `material_name`
-- `quantity_used`
-- `unit` (pair, piece, liter, etc.)
-- `production_output` (optional: units produced in that period)
-- `remarks` (optional: reason, abnormal usage, etc.)
+---
 
-## KPIs
+## 5. Project structure
 
-Some key indicators calculated in this project:
-
-- **Usage per person per shift**  
-- **Usage per 1000 units produced**  
-- **Top materials by cost and volume**  
-- **Abnormal spikes by shift / line / role**  
-- **Trend before vs. after improvement actions**
-
-## Tech stack
-
-- **Python**: data generation, cleaning, aggregation
-- **Pandas / NumPy**: data processing
-- **Tableau or Power BI**: interactive dashboards for management and shopfloor reviews
-
-## Repository structure
-
-See the folder structure in this README’s top section.
-
-## How to run
-
-1. **Create environment**
-
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # Windows: .venv\Scripts\activate
-   pip install -r requirements.txt
+```text
+operation-team-material-tracking/
+├─ data/
+│  ├─ raw/
+│  │  └─ material_usage_raw.csv
+│  └─ processed/
+│     ├─ material_usage_clean.csv
+│     └─ material_usage_agg.csv
+├─ src/
+│  ├─ data_generation.py
+│  ├─ data_processing.py
+│  └─ kpi_calculation.py
+├─ dashboards/
+│  └─ powerbi/
+│     └─ material_usage_dashboard.pbix
+├─ notebooks/
+│  └─ exploration.ipynb
+├─ reports/
+│  └─ findings.md
+└─ README.md
