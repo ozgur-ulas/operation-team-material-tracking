@@ -115,3 +115,29 @@ if __name__ == "__main__":
     df = generate_usage_records(start, end)
     df.to_csv("data/raw/material_usage_raw.csv", index=False)
     print(f"Generated {len(df)} records.")
+
+
+import pandas as pd
+from pathlib import Path
+
+RAW_PATH = Path("data/raw/material_usage_raw.csv")
+PROC_PATH = Path("data/processed/material_usage_clean.csv")
+
+def load_and_clean():
+    df = pd.read_csv(RAW_PATH, parse_dates=["date"])
+
+    # Basic cleaning examples
+    df["material_name"] = df["material_name"].str.strip()
+    df["role"] = df["role"].str.lower()
+    df["department"] = df["department"].str.upper()
+
+    # Drop rows with missing material or quantity
+    df = df.dropna(subset=["material_name", "quantity_used"])
+
+    return df
+
+if __name__ == "__main__":
+    df_clean = load_and_clean()
+    PROC_PATH.parent.mkdir(parents=True, exist_ok=True)
+    df_clean.to_csv(PROC_PATH, index=False)
+    print(f"Saved cleaned data to {PROC_PATH}")
