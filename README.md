@@ -4,7 +4,7 @@ Data-driven tracking of PPE and shopfloor material usage for a 3‑shift manufac
 
 ---
 
-## 1. Project snapshot
+## 1. Project snapshot🎯
 
 **Goal:** Reduce over‑consumption of PPE and indirect materials (gloves, chemicals, clothing, etc.) while keeping safety and quality intact.
 
@@ -24,7 +24,7 @@ Data-driven tracking of PPE and shopfloor material usage for a 3‑shift manufac
 
 ---
 
-## 2. Business problem & impact
+## 2. Business problem & impact 📠
 
 ### Problem
 
@@ -45,7 +45,7 @@ With this project, a manufacturing team could:
 
 ---
 
-## 3. Data design
+## 3. Data design ⌨️
 
 Because I cannot share real factory data, I created a **synthetic dataset** that mimics a real environment.
 
@@ -90,7 +90,7 @@ Each row represents **material usage by one employee in one shift on one day**.
 
 ---
 
-## 4. Tech stack & skills demonstrated
+## 4. Tech stack & skills demonstrated 🔋
 
 - **Python**
   - Synthetic data generation
@@ -107,7 +107,7 @@ Each row represents **material usage by one employee in one shift on one day**.
 
 ---
 
-## 5. Project structure
+## 5. Project structure 🏆
 
 ```text
 operation-team-material-tracking/
