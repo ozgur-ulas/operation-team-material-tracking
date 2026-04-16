@@ -1,4 +1,4 @@
-# Operation Team Material Tracking 📦
+# Operation Team Material Tracking
 
 Data-driven tracking of PPE and shopfloor material usage for a 3‑shift manufacturing operation, built with **Python + Power BI**.
 
