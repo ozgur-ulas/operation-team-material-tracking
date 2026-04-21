@@ -34,6 +34,6 @@ date,shift,employee_id,role,department,material_name,quantity_used,unit,producti
 2025-01-02,1,E005,operator,LINE_C,Plastic_cover,1,piece,1700
 2025-01-02,1,E006,technician,MAINTENANCE,Machine_Oil,0.5,liter,
 2025-01-02,1,E006,technician,MAINTENANCE,Conveyor_Rollers_Oil,1.5,liter,
-2025-01-02,1,E006,technician,MAINTENANCE,STAMA_Oil,1.2,liter
+2025-01-02,1,E006,technician,MAINTENANCE,STAMA_Oil,1.2,liter,
 2025-01-02,1,E007,technician,MAINTENANCE,Lubrication_chemical,0.4,liter,
 2025-01-02,1,E008,quality,LINE
